@@ -1,0 +1,109 @@
+thumb_group_controller:
+  type: effort_controllers/JointPositionController
+  joints:
+    - thumb_joint_1
+    - thumb_joint_2
+    - thumb_joint_3
+  gains:
+    thumb_joint_1:
+      p: 1
+      d: 1
+      i: 1
+
+    thumb_joint_2:
+      p: 1
+      d: 1
+      i: 1
+
+    thumb_joint_3:
+      p: 1
+      d: 1
+      i: 1
+
+index_group_controller:
+  type: effort_controllers/JointPositionController
+  joints:
+    - index_joint_1
+    - index_joint_2
+    - index_joint_3
+  gains:
+    index_joint_1:
+      p: 1
+      d: 1
+      i: 1
+
+    index_joint_2:
+      p: 1
+      d: 1
+      i: 1
+
+    index_joint_3:
+      p: 1
+      d: 1
+      i: 1
+
+middle_group_controller:
+  type: effort_controllers/JointPositionController
+  joints:
+    - middle_joint_1
+    - middle_joint_2
+    - middle_joint_3
+  gains:
+    middle_joint_1:
+      p: 1
+      d: 1
+      i: 1
+
+    middle_joint_2:
+      p: 1
+      d: 1
+      i: 1
+
+    middle_joint_3:
+      p: 1
+      d: 1
+      i: 1
+
+ring_group_controller:
+  type: effort_controllers/JointPositionController
+  joints:
+    - ring_joint_1
+    - ring_joint_2
+    - ring_joint_3
+  gains:
+    ring_joint_1:
+      p: 1
+      d: 1
+      i: 1
+
+    ring_joint_2:
+      p: 1
+      d: 1
+      i: 1
+
+    ring_joint_3:
+      p: 1
+      d: 1
+      i: 1
+
+little_group_controller:
+  type: effort_controllers/JointPositionController
+  joints:
+    - little_joint_1
+    - little_joint_2
+    - little_joint_3
+  gains:
+    little_joint_1:
+      p: 1
+      d: 1
+      i: 1
+
+    little_joint_2:
+      p: 1
+      d: 1
+      i: 1
+
+    little_joint_3:
+      p: 1
+      d: 1
+      i: 1

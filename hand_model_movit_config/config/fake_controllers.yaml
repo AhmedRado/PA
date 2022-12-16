@@ -1,0 +1,50 @@
+controller_list:
+  - name: fake_thumb_group_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - thumb_joint_1
+      - thumb_joint_2
+      - thumb_joint_3
+  - name: fake_index_group_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - index_joint_1
+      - index_joint_2
+      - index_joint_3
+  - name: fake_middle_group_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - middle_joint_1
+      - middle_joint_2
+      - middle_joint_3
+  - name: fake_ring_group_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - ring_joint_1
+      - ring_joint_2
+      - ring_joint_3
+  - name: fake_little_group_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - little_joint_1
+      - little_joint_2
+      - little_joint_3
+  - name: fake_finger_tips_parents_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - index_joint_2
+      - little_joint_2
+      - middle_joint_2
+      - ring_joint_2
+      - thumb_joint_2
+initial:  # Define initial robot poses per group
+  - group: thumb_group
+    pose: thumb_zeros
+  - group: index_group
+    pose: index_zeros
+  - group: middle_group
+    pose: middle_zeros
+  - group: ring_group
+    pose: ring_zeros
+  - group: little_group
+    pose: little_zeros

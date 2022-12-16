@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: hand_model
+    relative_path: urdf/hand_model.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/hand_model.srdf
+  CONFIG:
+    author_name: AhmedAbdelfattah
+    author_email: Ahmed.Abdelfattah@tuhh.de
+    generated_timestamp: 1671205976
