@@ -2,14 +2,19 @@
 <launch>
 
   <!-- Load joint controller configurations from YAML file to parameter server -->
-  <rosparam file="$(find hand_model)/config/my_ros_controllers.yaml" command="load"/>
+  <rosparam file="$(find hand_model)/config/my_ros_controllers.yaml" command="load" />
 
   <!-- Load the controllers -->
   <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
-    output="screen" args="thumb_group_controller index_group_controller middle_group_controller ring_group_controller little_group_controller joint_state_controller"/>
+    output="screen" ns="/hand" args="thumb_joint_1_controller thumb_joint_2_controller thumb_joint_3_controller 
+                                     index_joint_1_controller index_joint_2_controller index_joint_3_controller 
+                                     middle_joint_1_controller middle_joint_2_controller middle_joint_3_controller 
+                                     ring_joint_1_controller ring_joint_2_controller ring_joint_3_controller 
+                                     little_joint_1_controller little_joint_2_controller little_joint_3_controller 
+                                     joint_state_controller" />
 
   <!-- robot state publisher -->
-  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" 
-  respawn="false" output="screen"/>
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+    respawn="false" output="screen" />
 
 </launch>
