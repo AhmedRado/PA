@@ -4,16 +4,16 @@
     <material name="red">
       <color rgba="0.8 0.0 0.0 1.0"/>
     </material>
-    <xacro:property name="cameraSize" value="0.05" /> <!-- Size of square 'camera' box -->
+    <xacro:property name="cameraSize" value="0.02" /> <!-- Size of square 'camera' box -->
     <xacro:property name="cameraMass" value="0.1" /> <!-- Mass of square 'camera' box -->
 
-    <joint name="camera_joint" type="fixed">
-        <axis xyz="0 0 0" />
-        <origin xyz="0 0 1" rpy="0 0 0"/>
-        <parent link="upper_arm_link"/>
+    <joint name="camera_joint" type="revolute">
+        <axis xyz="0 1 0" />
+        <origin xyz="-0.3 0 0" rpy="0 0 ${-pi/2}"/>
+        <parent link="forearm_link"/>
         <child link="camera_link"/>
+        <limit lower="-2" upper="2" effort="330.0" velocity="3.14"/>
       </joint>
-    
       <!-- Camera -->
       <link name="camera_link">
         <collision>
@@ -38,9 +38,4 @@
           <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
         </inertial>
       </link>
-
-
-
-
-
 </robot>

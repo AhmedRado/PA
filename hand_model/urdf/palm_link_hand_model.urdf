@@ -1,0 +1,22 @@
+<link name="palm">
+    <inertial>
+        <origin xyz="0.00398178507403143 8.10912535103292E-05 0.0640495520207742" rpy="0 0 0" />
+        <mass value="0.111751758328988" />
+        <inertia ixx="6.59202525142851E-05" ixy="-1.22829107034955E-07" ixz="1.81754919948642E-05" iyy="9.3013080838165E-05" iyz="2.30342036318053E-07" izz="3.38720512333921E-05" />
+    </inertial>
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://hand_model/meshes/palm.STL" />
+        </geometry>
+        <material name="">
+            <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+        </material>
+    </visual>
+    <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://hand_model/meshes/palm.STL" />
+        </geometry>
+    </collision>
+</link>

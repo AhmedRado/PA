@@ -58,7 +58,7 @@
         <parent link="palm" />
         <child link="thumb_link_1" />
         <axis xyz="0 0 -1" />
-        <limit lower="-2" upper="2" effort="15" velocity="137" />
+        <limit lower="-1" upper="2" effort="15" velocity="137" />
     </joint>
     <link name="thumb_link_2">
         <inertial>
@@ -87,7 +87,7 @@
         <parent link="thumb_link_1" />
         <child link="thumb_link_2" />
         <axis xyz="0 0 -1" />
-        <limit lower="-2" upper="2" effort="15" velocity="137" />
+        <limit lower="-1" upper="2" effort="15" velocity="137" />
     </joint>
     <link name="thumb_link_3">
         <inertial>
@@ -116,7 +116,7 @@
         <parent link="thumb_link_2" />
         <child link="thumb_link_3" />
         <axis xyz="0 0 -1" />
-        <limit lower="-2" upper="2" effort="15" velocity="137" />
+        <limit lower="-1" upper="2" effort="15" velocity="137" />
     </joint>
     <link name="index_link_1">
         <inertial>
@@ -145,7 +145,7 @@
         <parent link="palm" />
         <child link="index_link_1" />
         <axis xyz="0 0 -1" />
-        <limit lower="-2" upper="2" effort="15" velocity="137" />
+        <limit lower="-1" upper="2" effort="15" velocity="137" />
     </joint>
     <link name="index_link_2">
         <inertial>
@@ -174,7 +174,7 @@
         <parent link="index_link_1" />
         <child link="index_link_2" />
         <axis xyz="0 0 -1" />
-        <limit lower="-2" upper="2" effort="15" velocity="137" />
+        <limit lower="-1" upper="2" effort="15" velocity="137" />
     </joint>
     <link name="index_link_3">
         <inertial>
@@ -203,7 +203,7 @@
         <parent link="index_link_2" />
         <child link="index_link_3" />
         <axis xyz="0 0 -1" />
-        <limit lower="-2" upper="2" effort="15" velocity="137" />
+        <limit lower="-1" upper="2" effort="15" velocity="137" />
     </joint>
     <link name="middle_link_1">
         <inertial>
@@ -232,7 +232,7 @@
         <parent link="palm" />
         <child link="middle_link_1" />
         <axis xyz="0 0 -1" />
-        <limit lower="-2" upper="2" effort="15" velocity="137" />
+        <limit lower="-1" upper="2" effort="15" velocity="137" />
     </joint>
     <link name="middle_link_2">
         <inertial>
@@ -261,7 +261,7 @@
         <parent link="middle_link_1" />
         <child link="middle_link_2" />
         <axis xyz="0 0 -1" />
-        <limit lower="-2" upper="2" effort="15" velocity="137" />
+        <limit lower="-1" upper="2" effort="15" velocity="137" />
     </joint>
     <link name="middle_link_3">
         <inertial>
@@ -290,7 +290,7 @@
         <parent link="middle_link_2" />
         <child link="middle_link_3" />
         <axis xyz="0 0 -1" />
-        <limit lower="-2" upper="2" effort="15" velocity="137" />
+        <limit lower="-1" upper="2" effort="15" velocity="137" />
     </joint>
     <link name="ring_link_1">
         <inertial>
@@ -319,7 +319,7 @@
         <parent link="palm" />
         <child link="ring_link_1" />
         <axis xyz="0 0 -1" />
-        <limit lower="-2" upper="2" effort="15" velocity="137" />
+        <limit lower="-1" upper="2" effort="15" velocity="137" />
     </joint>
     <link name="ring_link_2">
         <inertial>
@@ -348,7 +348,7 @@
         <parent link="ring_link_1" />
         <child link="ring_link_2" />
         <axis xyz="0 0 -1" />
-        <limit lower="-2" upper="2" effort="15" velocity="137" />
+        <limit lower="-1" upper="2" effort="15" velocity="137" />
     </joint>
     <link name="ring_link_3">
         <inertial>
@@ -377,7 +377,7 @@
         <parent link="ring_link_2" />
         <child link="ring_link_3" />
         <axis xyz="0 0 -1" />
-        <limit lower="-2" upper="2" effort="15" velocity="137" />
+        <limit lower="-1" upper="2" effort="15" velocity="137" />
     </joint>
     <link name="little_link_1">
         <inertial>
@@ -406,7 +406,7 @@
         <parent link="palm" />
         <child link="little_link_1" />
         <axis xyz="0 0 -1" />
-        <limit lower="-2" upper="2" effort="15" velocity="137" />
+        <limit lower="-1" upper="2" effort="15" velocity="137" />
     </joint>
     <link name="little_link_2">
         <inertial>
@@ -435,7 +435,7 @@
         <parent link="little_link_1" />
         <child link="little_link_2" />
         <axis xyz="0 0 -1" />
-        <limit lower="-2" upper="2" effort="15" velocity="137" />
+        <limit lower="-1" upper="2" effort="15" velocity="137" />
     </joint>
     <link name="little_link_3">
         <inertial>
@@ -464,7 +464,7 @@
         <parent link="little_link_2" />
         <child link="little_link_3" />
         <axis xyz="0 0 -1" />
-        <limit lower="-2" upper="2" effort="15" velocity="137" />
+        <limit lower="-1" upper="2" effort="15" velocity="137" />
     </joint>
     <transmission name="trans_thumb_joint_1">
         <type>transmission_interface/SimpleTransmission</type>

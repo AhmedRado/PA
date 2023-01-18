@@ -16,6 +16,7 @@
 		 wrist_1_lower_limit="${-pi}" wrist_1_upper_limit="${pi}"
 		 wrist_2_lower_limit="${-pi}" wrist_2_upper_limit="${pi}"
 		 wrist_3_lower_limit="${-pi}" wrist_3_upper_limit="${pi}"
+     camera_lower_limit="${-pi}" camera_upper_limit="${pi}"
 />
 
   <link name="world" />

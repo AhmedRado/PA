@@ -63,6 +63,16 @@
       </actuator>
     </transmission>
 
+    <transmission name="${prefix}camera_link_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${prefix}camera_joint">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="${prefix}camera_3_motor">
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+
   </xacro:macro>
 
 </robot>

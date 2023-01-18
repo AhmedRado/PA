@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="Excoskelaton">
+    <link name="shoulder">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <mass value="1.4368" />
+            <inertia ixx="0.002816" ixy="4.3368E-19" ixz="1.0842E-19" iyy="0.002816" iyz="0" izz="0.002816" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://Excoskelaton/meshes/shoulder.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.79216 0.81961 0.93333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://Excoskelaton/meshes/shoulder.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="upperarm">
+        <inertial>
+            <origin xyz="-2.8704E-10 -0.16994 1.4647E-10" rpy="0 0 0" />
+            <mass value="0.21717" />
+            <inertia ixx="0.00080566" ixy="4.8074E-12" ixz="-6.7234E-13" iyy="6.1535E-05" iyz="-2.6373E-12" izz="0.00085167" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://Excoskelaton/meshes/upperarm.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.64706 0.61961 0.58824 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://Excoskelaton/meshes/upperarm.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <link name="dummy 1" />
+    <joint name="upperarm joint 1" type="revolute">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <parent link="shoulder" />
+        <child link="dummy 1" />
+        <axis xyz="0 0 1" />
+        <limit lower="-20" upper="20" effort="15" velocity="135" />
+    </joint>
+    <link name="dummy 2" />
+    <joint name="upperarm joint 2" type="revolute">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <parent link="dummy 1" />
+        <child link="dummy 2" />
+        <axis xyz="0 1 0" />
+        <limit lower="-20" upper="20" effort="15" velocity="135" />
+    </joint>
+    <joint name="upperarm joint 3" type="revolute">
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <parent link="dummy 2" />
+        <child link="upperarm" />
+        <axis xyz="1 0 0" />
+        <limit lower="-20" upper="20" effort="15" velocity="135" />
+    </joint>
+    <link name="forearm">
+        <inertial>
+            <origin xyz="0.012852 -0.14821 5.1015E-13" rpy="0 0 0" />
+            <mass value="0.29936" />
+            <inertia ixx="0.002024" ixy="0.00016846" ixz="-1.301E-18" iyy="9.5875E-05" iyz="6.8474E-18" izz="0.0021012" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://Excoskelaton/meshes/forearm.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.64706 0.61961 0.58824 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://Excoskelaton/meshes/forearm.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="forearm_joint" type="revolute">
+        <origin xyz="0 -0.28 0" rpy="0 0 0" />
+        <parent link="upperarm" />
+        <child link="forearm" />
+        <axis xyz="0 0 1" />
+        <limit lower="-20" upper="20" effort="15" velocity="135" />
+    </joint>
+    <transmission name="trans_upperarm joint 1">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="upperarm joint 1">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="upperarm joint 1_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_upperarm joint 2">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="upperarm joint 2">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="upperarm joint 2_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_upperarm joint 3">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="upperarm joint 3">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="upperarm joint 3_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <transmission name="trans_forearm_joint">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="forearm_joint">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="forearm_joint_motor">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <gazebo>
+        <plugin name="gazebo_ros_control">
+            <robotNamespace>/</robotNamespace>
+        </plugin>
+    </gazebo>
+</robot>
+

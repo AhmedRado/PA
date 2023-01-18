@@ -1,0 +1,5 @@
+<link name="world" />
+<joint name="world_to_base_link=" type="fixed">
+    <parent link="world" />
+    <child link="palm" />
+</joint>

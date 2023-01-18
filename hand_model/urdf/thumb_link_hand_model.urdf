@@ -1,0 +1,22 @@
+<link name="thumb_link_1">
+    <inertial>
+        <origin xyz="0.000480535490973766 0.0145868596829117 0.002112956638099" rpy="0 0 0" />
+        <mass value="0.0113562962089711" />
+        <inertia ixx="1.13781700766449E-06" ixy="-3.17874553723836E-09" ixz="1.02179230912118E-08" iyy="9.83244760493048E-07" iyz="7.32596805137895E-08" izz="7.56438518318171E-07" />
+    </inertial>
+    <visual>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://hand_model/meshes/thumb_link_1.STL" />
+        </geometry>
+        <material name="">
+            <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+        </material>
+    </visual>
+    <collision>
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <geometry>
+            <mesh filename="package://hand_model/meshes/thumb_link_1.STL" />
+        </geometry>
+    </collision>
+</link>

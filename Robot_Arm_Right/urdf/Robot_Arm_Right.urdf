@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="Robot_Arm_Right">
+  <link
+    name="shoulder">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="1.4368" />
+      <inertia
+        ixx="0.002816"
+        ixy="-2.1684E-19"
+        ixz="-4.8704E-21"
+        iyy="0.002816"
+        iyz="7.4962E-20"
+        izz="0.002816" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Robot_Arm_Right/meshes/shoulder.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Robot_Arm_Right/meshes/shoulder.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="upperarm">
+    <inertial>
+      <origin
+        xyz="4.3132E-13 -0.16988 -0.0048992"
+        rpy="0 0 0" />
+      <mass
+        value="0.2169" />
+      <inertia
+        ixx="0.00080289"
+        ixy="1.6167E-15"
+        ixz="-7.7979E-18"
+        iyy="6.1453E-05"
+        iyz="2.9044E-15"
+        izz="0.00084885" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Robot_Arm_Right/meshes/upperarm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.64706 0.61961 0.58824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Robot_Arm_Right/meshes/upperarm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="upperarm joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="shoulder" />
+    <child
+      link="upperarm" />
+    <axis
+      xyz="0.82931 -0.55878 0.00065727" />
+    <limit
+      lower="-20"
+      upper="20"
+      effort="15"
+      velocity="135" />
+  </joint>
+  <link
+    name="forearm">
+    <inertial>
+      <origin
+        xyz="-0.062822 -0.41467 -0.0048992"
+        rpy="0 0 0" />
+      <mass
+        value="0.29936" />
+      <inertia
+        ixx="0.0016896"
+        ixy="-0.00074924"
+        ixz="2.6949E-15"
+        iyy="0.00043031"
+        iyz="6.0384E-15"
+        izz="0.0021012" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Robot_Arm_Right/meshes/forearm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.64706 0.61961 0.58824 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Robot_Arm_Right/meshes/forearm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="forearm_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="upperarm" />
+    <child
+      link="forearm" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-20"
+      upper="20"
+      effort="15"
+      velocity="135" />
+  </joint>
+</robot>

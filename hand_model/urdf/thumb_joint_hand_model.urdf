@@ -1,0 +1,7 @@
+<joint name="thumb_joint_1" type="revolute">
+    <origin xyz="-0.030154 -2.0111E-05 0.05991" rpy="-0.083072 0 1.5708" />
+    <parent link="palm" />
+    <child link="thumb_link_1" />
+    <axis xyz="0 0 -1" />
+    <limit lower="0" upper="2" effort="15" velocity="137" />
+</joint>
