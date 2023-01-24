@@ -4,17 +4,28 @@
     <material name="red">
       <color rgba="0.8 0.0 0.0 1.0"/>
     </material>
-    <xacro:property name="cameraSize" value="0.02" /> <!-- Size of square 'camera' box -->
+    <xacro:property name="cameraSize" value="0.07" /> <!-- Size of square 'camera' box -->
     <xacro:property name="cameraMass" value="0.1" /> <!-- Mass of square 'camera' box -->
 
-    <joint name="camera_joint" type="revolute">
-        <axis xyz="0 1 0" />
-        <origin xyz="-0.3 0 0" rpy="0 0 ${-pi/2}"/>
-        <parent link="forearm_link"/>
-        <child link="camera_link"/>
-        <limit lower="-2" upper="2" effort="330.0" velocity="3.14"/>
+    <joint name="prismatic_joint_Z" type="prismatic">
+        <axis xyz="0 0 1" limit="-3.14 3.14" />
+        <origin xyz="0 0 1" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="dummy_link1"/>
+        <limit effort="330.0" velocity="3.14"/>
       </joint>
-      <!-- Camera -->
+      <link name="dummy_link1"/>
+      <joint name="base_link_to dummy_link1" type="fixed">
+        <parent link="base_link" />
+        <child link="dummy_link1" />
+      </joint> 
+      <joint name="revolute_joint_z" type="revolute">
+        <axis xyz="0 0 1" limit="-3.14 3.14" />
+        <origin xyz="0 0 1" rpy="0 0 0"/>
+        <parent link="dummy_link1"/>
+        <child link="camera_link"/>
+        <limit effort="330.0" velocity="3.14"/>
+      </joint>
       <link name="camera_link">
         <collision>
           <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -22,7 +33,6 @@
         <box size="${cameraSize} ${cameraSize} ${cameraSize}"/>
           </geometry>
         </collision>
-    
         <visual>
           <origin xyz="0 0 0" rpy="0 0 0"/>
           <geometry>
@@ -38,4 +48,50 @@
           <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
         </inertial>
       </link>
+
+      <!-- <link name="dummy_link1"/>
+      <link name="dummy_link2"/>
+      <joint name="base_link_to dummy_link1" type="fixed">
+        <parent link="base_link" />
+        <child link="dummy_link1" />
+      </joint> -->
+      <!-- <joint name="base_link_to dummy_link2" type="fixed">
+        <parent link="world" />
+        <child link="dummy_link2" />
+      </joint>   -->
+      <!-- <joint name="prismatic_joint_Z" type="prismatic">
+        <parent link="base_link"/>
+        <child link="dummy_link1"/>
+        <origin xyz="0 0 1" rpy="0 0 0"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-2" upper="2" effort="50" velocity="3.49" />
+      </joint>
+      <joint name="revolute_joint_z" type="revolute">
+        <axis xyz="0 0 1" />
+        <parent link="dummy_link1"/>
+        <child link="dummy_link2"/>
+        <limit lower="-3.14" upper="3.14" effort="50" velocity="3.49" />
+      </joint> -->
+      <!-- <joint name="revolute_joint_y" type="revolute">
+        <parent link="dummy_link1"/>
+        <child link="camera_link"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-3.14" upper="3.14" effort="50" velocity="3.49" />
+      </joint>
+      <gazebo reference="dummy_link1">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <selfCollide>1</selfCollide>
+      </gazebo>
+      <gazebo reference="dummy_link2">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <selfCollide>1</selfCollide>
+      </gazebo>
+      <gazebo reference="camera_link">
+        <mu1>0.2</mu1>
+        <mu2>0.2</mu2>
+        <selfCollide>1</selfCollide>
+      </gazebo> -->
+
 </robot>

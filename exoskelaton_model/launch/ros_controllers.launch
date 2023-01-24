@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <launch>
-
+  
   <!-- Load joint controller configurations from YAML file to parameter server -->
   <rosparam file="$(find exoskelaton_model)/config/my_ros_controllers.yaml" command="load" />
 
@@ -12,5 +12,5 @@
 
   <!-- robot state publisher -->
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
-    respawn="false" output="screen" />
+    respawn="false" ns="/exoskelaton" output="screen" />
 </launch>

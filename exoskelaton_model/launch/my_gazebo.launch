@@ -24,4 +24,5 @@
     respawn="false" output="screen" />
 
   <include file="$(find exoskelaton_model)/launch/ros_controllers.launch"/>
+  
 </launch>

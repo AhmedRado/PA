@@ -62,8 +62,7 @@
         <mechanicalReduction>1</mechanicalReduction>
       </actuator>
     </transmission>
-
-    <transmission name="${prefix}camera_link_trans">
+    <!-- <transmission name="${prefix}camera_link_trans">
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="${prefix}camera_joint">
         <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
@@ -71,7 +70,35 @@
       <actuator name="${prefix}camera_3_motor">
         <mechanicalReduction>1</mechanicalReduction>
       </actuator>
+    </transmission> -->
+    <transmission name="${prefix}camera_link_prismatic_z_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${prefix}prismatic_joint_Z">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="${prefix}camera_link_prismatic_z_motor">
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
     </transmission>
+    <transmission name="${prefix}camera_link_revolute_z_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${prefix}revolute_joint_z">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="${prefix}camera_link_revolute_z_motor">
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission>
+    <!-- <transmission name="${prefix}camera_link_revolute_y_trans">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="${prefix}revolute_joint_y">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="${prefix}camera_link_revolute_y_motor">
+        <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+    </transmission> -->
+
 
   </xacro:macro>
 

@@ -2,8 +2,8 @@
 <launch>
   <arg name="paused" default="false"/>
   <arg name="gazebo_gui" default="true"/>
-  <arg name="initial_joint_positions" doc="Initial joint configuration of the robot"
-       default=" -J index_joint_1 0 -J index_joint_2 0 -J index_joint_3 0 -J little_joint_1 0 -J little_joint_2 0 -J little_joint_3 0 -J middle_joint_1 0 -J middle_joint_2 0 -J middle_joint_3 0 -J ring_joint_1 0 -J ring_joint_2 0 -J ring_joint_3 0 -J thumb_joint_1 0 -J thumb_joint_2 0 -J thumb_joint_3 0"/>
+  <!-- <arg name="initial_joint_positions" doc="Initial joint configuration of the robot"
+       default=" -J index_joint_1 0 -J index_joint_2 0 -J index_joint_3 0 -J little_joint_1 0 -J little_joint_2 0 -J little_joint_3 0 -J middle_joint_1 0 -J middle_joint_2 0 -J middle_joint_3 0 -J ring_joint_1 0 -J ring_joint_2 0 -J ring_joint_3 0 -J thumb_joint_1 0 -J thumb_joint_2 0 -J thumb_joint_3 0"/> -->
 
   <!-- startup simulated world -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -20,8 +20,9 @@
   <arg name="unpause" value="$(eval '' if arg('paused') else '-unpause')" />
   <!-- push robot_description to factory and spawn robot in gazebo at the origin, change x,y,z arguments to spawn in a different position -->
   <arg name="world_pose" value="-x 0 -y 0 -z 0" />
-  <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot $(arg unpause) $(arg world_pose) $(arg initial_joint_positions)"
+  <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot $(arg unpause) $(arg world_pose)"
     respawn="false" output="screen" />
 
   <include file="$(find hand_model)/launch/ros_controllers.launch"/>
+
 </launch>
