@@ -1,45 +1,10 @@
 <?xml version="1.0"?>
 <launch>
-  <arg name="gazebo_gui" default="true"/>
 
-  <!-- startup simulated world -->
-  <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <!-- <arg name="world_name" value="$(find exoskelaton_model)/world/my_custom_world.world"/> -->
-    <!-- <arg name="world_name" value="$(find exoskelaton_model)/world/empty_world_no_gravity_ODE.world"/> -->
-    <!-- <arg name="world_name" value="$(find exoskelaton_model)/world/empty_world_no_gravity_DART.world"/> -->
-    <arg name="world_name" default="worlds/empty.world"/>
-    <arg name="paused" value="true"/>
-    <arg name="gui" value="$(arg gazebo_gui)"/>
-  </include>
+  <include file="$(find remote_haptic_project)/launch/world.launch"/>
 
-  <!-- exoskelaton_model -->
-  <group ns="exoskelaton_model">
-    <arg name="paused" default="false"/>
-    <!-- send exoskelaton_model urdf to param server -->
-    <param name="robot_description" textfile="$(find exoskelaton_model)/urdf/exoskelaton_model.urdf" />
+  <include file="$(find remote_haptic_project)/launch/hand_bringup.launch"/>
 
-    <!-- unpause only after loading robot model -->
-    <arg name="unpause" value="$(eval '' if arg('paused') else '-unpause')" />
-    <!-- push robot_description to factory and spawn robot in gazebo at the origin, change x,y,z arguments to spawn in a different position -->
-    <arg name="world_pose" value="-x 0 -y 0 -z 2" />
-    <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot $(arg unpause) $(arg world_pose)"
-        respawn="false" output="screen" />
-  </group>
+  <include file="$(find remote_haptic_project)/launch/exoskelaton_bringup.launch"/>
 
-  <!-- hand_model -->
-  <group ns="hand_model">
-    <arg name="paused" default="false"/>
-    <!-- send hand_model urdf to param server -->
-    <param name="robot_description" textfile="$(find hand_model)/urdf/hand_model.urdf" />
-
-    <!-- unpause only after loading robot model -->
-    <arg name="unpause" value="$(eval '' if arg('paused') else '-unpause')" />
-    <!-- push robot_description to factory and spawn robot in gazebo at the origin, change x,y,z arguments to spawn in a different position -->
-    <arg name="world_pose" value="-x 1 -y 1 -z 0" />
-    <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot $(arg unpause) $(arg world_pose)"
-        respawn="false" output="screen" />
-  </group>
-
-  <!-- <include file="$(find exoskelaton_model)/launch/ros_controllers.launch"/>
-  <include file="$(find hand_model)/launch/ros_controllers.launch"/> -->
 </launch>
