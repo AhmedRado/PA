@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="camera_mechanism_model">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-1.04202392871856E-08 -0.00344224088498781 0.0261980811182989"
+        rpy="0 0 0" />
+      <mass
+        value="0.090334008845598" />
+      <inertia
+        ixx="6.84673036710358E-05"
+        ixy="5.99792417796738E-12"
+        ixz="1.34390537477221E-12"
+        iyy="6.51228346971038E-05"
+        iyz="-1.88731865013642E-07"
+        izz="0.000101737015622684" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://camera_mechanism_model/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://camera_mechanism_model/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link_1">
+    <inertial>
+      <origin
+        xyz="-0.00274428257190968 -0.00020748847805208 0.0169598693710931"
+        rpy="0 0 0" />
+      <mass
+        value="0.0762928038541526" />
+      <inertia
+        ixx="2.78524913265596E-05"
+        ixy="1.44751279636948E-08"
+        ixz="7.79881822675902E-07"
+        iyy="1.38848895102569E-05"
+        iyz="1.4640337530444E-08"
+        izz="3.46925557643959E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://camera_mechanism_model/meshes/link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://camera_mechanism_model/meshes/link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_1"
+    type="revolute">
+    <origin
+      xyz="0 0 0.045256"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_1" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="15"
+      velocity="137" />
+  </joint>
+  <link
+    name="link_2">
+    <inertial>
+      <origin
+        xyz="-0.000656123852365626 -0.0133684637742143 0.0684614118427633"
+        rpy="0 0 0" />
+      <mass
+        value="0.0760046548351893" />
+      <inertia
+        ixx="1.01097278745385E-05"
+        ixy="-8.26121264437275E-07"
+        ixz="-3.14738619919485E-08"
+        iyy="8.75759430262868E-05"
+        iyz="3.75975452138261E-08"
+        izz="8.43979936608012E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://camera_mechanism_model/meshes/link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://camera_mechanism_model/meshes/link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_2"
+    type="revolute">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="link_1" />
+    <child
+      link="link_2" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1.5708"
+      upper="1.5708"
+      effort="15"
+      velocity="137" />
+  </joint>
+</robot>
