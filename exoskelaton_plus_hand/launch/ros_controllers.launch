@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<launch>
+  
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find exoskelaton_plus_hand)/config/my_ros_controllers.yaml" command="load" />
+
+  <!-- Load the controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" ns="/exoskelaton_plus_hand" args="joint_1_controller joint_2_controller joint_3_controller 
+                                     joint_4_controller joint_5_controller thumb_joint_1_controller thumb_joint_2_controller thumb_joint_3_controller 
+                                     index_joint_1_controller index_joint_2_controller index_joint_3_controller 
+                                     middle_joint_1_controller middle_joint_2_controller middle_joint_3_controller 
+                                     ring_joint_1_controller ring_joint_2_controller ring_joint_3_controller 
+                                     little_joint_1_controller little_joint_2_controller little_joint_3_controller link_5_to_palm_controller
+                                     joint_state_controller" />
+
+  <!-- robot state publisher -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+    respawn="false" ns="/exoskelaton_plus_hand" output="screen" />
+</launch>

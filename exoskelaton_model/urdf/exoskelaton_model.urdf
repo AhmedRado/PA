@@ -10,38 +10,36 @@
     </joint>
     <link name="base_link">
         <inertial>
-            <origin xyz="-0.083621 0.0087548 -0.18258" rpy="0 0 0" />
-            <mass value="2.5151" />
-            <inertia ixx="0.022882" ixy="2.2141E-06" ixz="-2.4105E-05" iyy="0.016089" iyz="2.9427E-06" izz="0.0083528" />
-            <!-- <inertia ixx="1e-3" ixy="0.0" ixz="0.0" iyy="1e-3" iyz="0.0" izz="1e-3" /> -->
+            <origin xyz="-0.0836207176577604 0.00875481719950126 -0.182578110095897" rpy="0 0 0" />
+            <mass value="2.51510979215834" />
+            <inertia ixx="0.0228818124596641" ixy="2.21405760466253E-06" ixz="-2.41054719117493E-05" iyy="0.0160894130168314" iyz="2.94271508438108E-06" izz="0.00835275247773463" />
         </inertial>
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://exoskelaton_model/meshes/base_link.STL" />
+                <mesh filename="package://exoskelaton_model_2/meshes/base_link.STL" />
             </geometry>
             <material name="">
-                <color rgba="0.74902 0.74902 0.74902 1" />
+                <color rgba="0.749019607843137 0.749019607843137 0.749019607843137 1" />
             </material>
         </visual>
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://exoskelaton_model/meshes/base_link.STL" />
+                <mesh filename="package://exoskelaton_model_2/meshes/base_link.STL" />
             </geometry>
         </collision>
     </link>
     <link name="link_1">
         <inertial>
-            <origin xyz="0.00026832 0.11245 0.1143" rpy="0 0 0" />
+            <origin xyz="0.00051632 0.11245 0.1143" rpy="0 0 0" />
             <mass value="1.1771" />
-            <inertia ixx="0.0010591" ixy="6.9462E-07" ixz="-2.3971E-05" iyy="0.00080811" iyz="-2.4496E-05" izz="0.00047305" />
-            <!-- <inertia ixx="1e-3" ixy="0.0" ixz="0.0" iyy="1e-3" iyz="0.0" izz="1e-3" /> -->
+            <inertia ixx="0.0010591" ixy="1.4114E-07" ixz="-2.4025E-05" iyy="0.00080811" iyz="-2.4443E-05" izz="0.00047305" />
         </inertial>
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://exoskelaton_model/meshes/link_1.STL" />
+                <mesh filename="package://exoskelaton_model_2/meshes/link_1.STL" />
             </geometry>
             <material name="">
                 <color rgba="0.75294 0.75294 0.75294 1" />
@@ -50,12 +48,12 @@
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://exoskelaton_model/meshes/link_1.STL" />
+                <mesh filename="package://exoskelaton_model_2/meshes/link_1.STL" />
             </geometry>
         </collision>
     </link>
     <joint name="joint_1" type="revolute">
-        <origin xyz="-0.15577 0.0088052 -0.26586" rpy="-0.00036153 -0.00029771 -3.1416" />
+        <origin xyz="-0.15576841452816 0.00880518561429395 -0.265864926099811" rpy="-0.00036152630959631 -0.000297710155103675 -3.14159254595974" />
         <parent link="base_link" />
         <child link="link_1" />
         <axis xyz="0 0 -1" />
@@ -63,15 +61,14 @@
     </joint>
     <link name="link_2">
         <inertial>
-            <origin xyz="0.0048091 0.19042 0.042951" rpy="0 0 0" />
+            <origin xyz="-0.0047682 0.19042 0.042951" rpy="0 0 0" />
             <mass value="1.1565" />
-            <inertia ixx="0.0010511" ixy="-5.3021E-05" ixz="-1.3739E-07" iyy="0.00039937" iyz="-2.118E-06" izz="0.00087969" />
-            <!-- <inertia ixx="1e-3" ixy="0.0" ixz="0.0" iyy="1e-3" iyz="0.0" izz="1e-3" /> -->
+            <inertia ixx="0.0010548" ixy="-2.0035E-05" ixz="-3.0714E-08" iyy="0.00039569" iyz="-2.1223E-06" izz="0.00087969" />
         </inertial>
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://exoskelaton_model/meshes/link_2.STL" />
+                <mesh filename="package://exoskelaton_model_2/meshes/link_2.STL" />
             </geometry>
             <material name="">
                 <color rgba="0.75294 0.75294 0.75294 1" />
@@ -80,12 +77,12 @@
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://exoskelaton_model/meshes/link_2.STL" />
+                <mesh filename="package://exoskelaton_model_2/meshes/link_2.STL" />
             </geometry>
         </collision>
     </link>
     <joint name="joint_2" type="revolute">
-        <origin xyz="-0.03876 0.11791 0.13076" rpy="-3.1238 -1.5708 3.126" />
+        <origin xyz="-0.0385000000000007 0.117999999999999 0.130760035281312" rpy="-0.037127716917956 -1.57079631189374 0.0371631202033193" />
         <parent link="link_1" />
         <child link="link_2" />
         <axis xyz="0 0 -1" />
@@ -93,15 +90,14 @@
     </joint>
     <link name="link_3">
         <inertial>
-            <origin xyz="-0.035914 0.18469 0.044015" rpy="0 0 0" />
+            <origin xyz="-0.0082161 0.18797 0.044015" rpy="0 0 0" />
             <mass value="1.1562" />
-            <inertia ixx="0.0010315" ixy="0.0001235" ixz="-2.8739E-07" iyy="0.00041833" iyz="1.598E-06" izz="0.0008792" />
-            <!-- <inertia ixx="1e-3" ixy="0.0" ixz="0.0" iyy="1e-3" iyz="0.0" izz="1e-3" /> -->
+            <inertia ixx="0.0010542" ixy="2.8457E-05" ixz="-4.9159E-08" iyy="0.00039561" iyz="1.6209E-06" izz="0.0008792" />
         </inertial>
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://exoskelaton_model/meshes/link_3.STL" />
+                <mesh filename="package://exoskelaton_model_2/meshes/link_3.STL" />
             </geometry>
             <material name="">
                 <color rgba="0.75294 0.75294 0.75294 1" />
@@ -110,12 +106,12 @@
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://exoskelaton_model/meshes/link_3.STL" />
+                <mesh filename="package://exoskelaton_model_2/meshes/link_3.STL" />
             </geometry>
         </collision>
     </link>
     <joint name="joint_3" type="revolute">
-        <origin xyz="-0.03366 0.20656 0.046" rpy="1.5708 0 -1.6211" />
+        <origin xyz="-0.0440000000000005 0.204606049200406 0.045999999999999" rpy="1.57079632679491 0 -1.5707963267949" />
         <parent link="link_2" />
         <child link="link_3" />
         <axis xyz="0 0 -1" />
@@ -123,15 +119,14 @@
     </joint>
     <link name="link_4">
         <inertial>
-            <origin xyz="-0.12254 0.22742 -0.030124" rpy="0 0 0" />
+            <origin xyz="0.030218 0.25657 -0.030079" rpy="0 0 0" />
             <mass value="1.19" />
-            <inertia ixx="0.00090778" ixy="0.00033737" ixz="-1.3858E-05" iyy="0.00062445" iyz="2.0378E-05" izz="0.0013155" />
-            <!-- <inertia ixx="1e-3" ixy="0.0" ixz="0.0" iyy="1e-3" iyz="0.0" izz="1e-3" /> -->
+            <inertia ixx="0.0011316" ixy="-1.8161E-05" ixz="3.377E-07" iyy="0.00040064" iyz="2.4483E-05" izz="0.0013155" />
         </inertial>
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://exoskelaton_model/meshes/link_4.STL" />
+                <mesh filename="package://exoskelaton_model_2/meshes/link_4.STL" />
             </geometry>
             <material name="">
                 <color rgba="0.75294 0.75294 0.75294 1" />
@@ -140,28 +135,27 @@
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://exoskelaton_model/meshes/link_4.STL" />
+                <mesh filename="package://exoskelaton_model_2/meshes/link_4.STL" />
             </geometry>
         </collision>
     </link>
     <joint name="joint_4" type="revolute">
-        <origin xyz="0.0027746 0.20467 0.047" rpy="1.5708 0 1.7195" />
+        <origin xyz="0.0330000000000062 0.202007049200406 0.0469999999999915" rpy="1.5707963267949 0 1.57109403696946" />
         <parent link="link_3" />
         <child link="link_4" />
-        <axis xyz="0 0 -1" />
+        <axis xyz="0.00029771017016183 0 -0.999999955684326" />
         <limit lower="-3.14" upper="3.14" effort="50" velocity="3.49" />
     </joint>
     <link name="link_5">
         <inertial>
-            <origin xyz="-0.067675 -0.096987 -0.007807" rpy="0 0 0" />
+            <origin xyz="3.5672E-06 -0.11826 -0.007807" rpy="0 0 0" />
             <mass value="0.073555" />
-            <inertia ixx="0.00014301" ixy="-9.669E-05" ixz="7.936E-07" iyy="7.1908E-05" iyz="1.1339E-06" izz="0.00021197" />
-            <!-- <inertia ixx="1e-3" ixy="0.0" ixz="0.0" iyy="1e-3" iyz="0.0" izz="1e-3" /> -->
+            <inertia ixx="0.00021048" ixy="3.6788E-09" ixz="1.899E-09" iyy="4.4387E-06" iyz="1.3841E-06" izz="0.00021197" />
         </inertial>
         <visual>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://exoskelaton_model/meshes/link_5.STL" />
+                <mesh filename="package://exoskelaton_model_2/meshes/link_5.STL" />
             </geometry>
             <material name="">
                 <color rgba="0.75294 0.75294 0.75294 1" />
@@ -170,12 +164,12 @@
         <collision>
             <origin xyz="0 0 0" rpy="0 0 0" />
             <geometry>
-                <mesh filename="package://exoskelaton_model/meshes/link_5.STL" />
+                <mesh filename="package://exoskelaton_model_2/meshes/link_5.STL" />
             </geometry>
         </collision>
     </link>
     <joint name="joint_5" type="revolute">
-        <origin xyz="-0.13159 0.24476 0.0099608" rpy="-0.00024377 0.0001709 2.1822" />
+        <origin xyz="0.032755858725567 0.275947208661753 0.0100097521958599" rpy="-0.000297710174561625 0 1.57079632679491" />
         <parent link="link_4" />
         <child link="link_5" />
         <axis xyz="0 0 -1" />
