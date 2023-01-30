@@ -24,7 +24,7 @@
           <alwaysOn>true</alwaysOn>
               <updateRate>10.0</updateRate>
               <cameraName>3d_camera</cameraName>
-              <frameName>3d_camera_link</frameName>                   
+              <frameName>camera_frame_optical</frameName>                   
           <imageTopicName>rgb/image_raw</imageTopicName>
           <depthImageTopicName>depth/image_raw</depthImageTopicName>
           <pointCloudTopicName>depth/points</pointCloudTopicName>
