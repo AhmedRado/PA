@@ -10,6 +10,8 @@
   <xacro:include filename="$(find ur_e_description)/urdf/ur.gazebo.xacro" />
   <xacro:include filename="$(find ur_e_description)/urdf/ur.camera.gazebo"/>
   <xacro:include filename="$(find ur_e_description)/urdf/ur.camera.xacro"/>
+  <xacro:include filename="$(find ur_e_description)/urdf/ur.3dcamera.gazebo"/>
+  <xacro:include filename="$(find ur_e_description)/urdf/ur.3dcamera.xacro"/>
 
   <xacro:macro name="cylinder_inertial" params="radius length mass *origin">
     <inertial>
@@ -344,6 +346,7 @@
 
     <xacro:ur_arm_transmission prefix="${prefix}" />
     <xacro:ur_arm_gazebo prefix="${prefix}" />
+    <xacro:macro name="ur_camera" params="prefix"/>
 
     <!-- ROS base_link to UR 'Base' Coordinates transform -->
     <link name="${prefix}base"/>

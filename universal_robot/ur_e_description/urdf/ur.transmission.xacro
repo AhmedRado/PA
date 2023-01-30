@@ -71,34 +71,56 @@
         <mechanicalReduction>1</mechanicalReduction>
       </actuator>
     </transmission> -->
-    <transmission name="${prefix}camera_link_prismatic_z_trans">
+    <!-- <transmission name="${prefix}camera_link_prismatic_z_trans">
       <type>transmission_interface/SimpleTransmission</type>
-      <joint name="${prefix}prismatic_joint_Z">
+      <joint name="${prefix}prismatic_joint_z">
         <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       </joint>
       <actuator name="${prefix}camera_link_prismatic_z_motor">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
         <mechanicalReduction>1</mechanicalReduction>
       </actuator>
-    </transmission>
-    <transmission name="${prefix}camera_link_revolute_z_trans">
+    </transmission> -->
+    <!-- <transmission name="${prefix}camera_link_revolute_z_trans">
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="${prefix}revolute_joint_z">
         <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       </joint>
       <actuator name="${prefix}camera_link_revolute_z_motor">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
         <mechanicalReduction>1</mechanicalReduction>
       </actuator>
     </transmission>
-    <!-- <transmission name="${prefix}camera_link_revolute_y_trans">
+    <transmission name="${prefix}camera_link_revolute_y_trans">
       <type>transmission_interface/SimpleTransmission</type>
       <joint name="${prefix}revolute_joint_y">
         <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
       </joint>
       <actuator name="${prefix}camera_link_revolute_y_motor">
+        <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
         <mechanicalReduction>1</mechanicalReduction>
       </actuator>
     </transmission> -->
-
+    <transmission name="trans_joint_1">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="joint_1">
+          <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="joint_1_motor">
+          <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+          <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+  </transmission>
+  <transmission name="trans_joint_2">
+      <type>transmission_interface/SimpleTransmission</type>
+      <joint name="joint_2">
+          <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      </joint>
+      <actuator name="joint_2_motor">
+          <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+          <mechanicalReduction>1</mechanicalReduction>
+      </actuator>
+  </transmission>
 
   </xacro:macro>
 
