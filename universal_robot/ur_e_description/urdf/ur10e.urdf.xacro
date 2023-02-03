@@ -10,6 +10,7 @@
   <xacro:include filename="$(find ur_e_description)/urdf/ur.gazebo.xacro" />
   <xacro:include filename="$(find ur_e_description)/urdf/ur.camera.gazebo"/>
   <xacro:include filename="$(find ur_e_description)/urdf/ur.camera.xacro"/>
+  <xacro:include filename="$(find ur_e_description)/urdf/ur.multicamera.gazebo"/>
   <xacro:include filename="$(find ur_e_description)/urdf/ur.3dcamera.gazebo"/>
   <xacro:include filename="$(find ur_e_description)/urdf/ur.3dcamera.xacro"/>
 
