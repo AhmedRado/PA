@@ -216,17 +216,32 @@ class MoveGroupPythonInterfaceTutorial(object):
         ## ^^^^^^^^^^^^^^^^^^^^^^^
         ## We can plan a motion for this group to a desired pose for the
         ## end-effector:
-        pose_goal = geometry_msgs.msg.Pose()
-        pose_goal.orientation.w = 1.0
-        # pose_goal.position.x = 400
-        # pose_goal.position.y = 300
-        # pose_goal.position.z = 100
+        # position: 
+        # x: 0.46343135891490844
+        # y: -2.270692004698213
+        # z: 0.4976569539168503
+        # orientation: 
+        # x: 0.4999965561795604
+        # y: -0.5001534322224118
+        # z: 0.4998255765970181
+        # w: -0.5000243804297744
 
+        pose_goal = geometry_msgs.msg.Pose()
+        # pose_goal.orientation.w =  -0.5000243804297744
+        # pose_goal.orientation.x = 0.4999965561795604
+        # pose_goal.orientation.y = -0.5001534322224118
+        # pose_goal.orientation.z = 0.4998255765970181
+        pose_goal.position.x = 0.46343135891490844
+        pose_goal.position.y = 0.2
+        pose_goal.position.z = 0.4976569539168503
         move_group.set_pose_target(pose_goal)
+        move_group.set_max_acceleration_scaling_factor(0.4)
+        move_group.set_max_velocity_scaling_factor(0.4)
 
         ## Now, we call the planner to compute the plan and execute it.
         # `go()` returns a boolean indicating whether the planning and execution was successful.
         success = move_group.go(wait=True)
+        # print(success)
         # Calling `stop()` ensures that there is no residual movement
         move_group.stop()
         # It is always good to clear your targets after planning with poses.
@@ -483,7 +498,7 @@ def main():
         tutorial.go_to_start_state()
 
         # "============ Press `Enter` to execute a movement using a pose goal ..."
-        # tutorial.go_to_pose_goal()
+        tutorial.go_to_pose_goal()
 
         # # "============ Press `Enter` to plan and display a Cartesian path ..."
         # cartesian_plan, fraction = tutorial.plan_cartesian_path()
@@ -518,8 +533,10 @@ def main():
 
         # print("============ Python tutorial demo complete!")
     except rospy.ROSInterruptException:
+        print("failed due to ROSInterruptException")
         return
     except KeyboardInterrupt:
+        print("failed due to KeyboardInterrupt")
         return
 
 
