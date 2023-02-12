@@ -121,8 +121,8 @@ class move_robot_as_wrist():
         joint_goal[5] = 0  # 1/6 of a turn
         # The go command can be called with joint values, poses, or without any
         # parameters if you have already set the pose or joint target for the group
-        move_group.set_max_acceleration_scaling_factor(0.4)
-        move_group.set_max_velocity_scaling_factor(0.4)
+        move_group.set_max_acceleration_scaling_factor(1)
+        move_group.set_max_velocity_scaling_factor(1)
         move_group.go(joint_goal, wait=True)
 
         # Calling ``stop()`` ensures that there is no residual movement
