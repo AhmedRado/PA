@@ -125,6 +125,12 @@ As MoveIt! seems to have difficulties with finding plans for the UR with full jo
 
 ```roslaunch ur10_e_moveit_config ur10_e_moveit_planning_execution.launch sim:=true limited:=true```
 
+to make robot ee follow palm
+
+```export ROS_NAMESPACE=/ur10e``
+
+```rosrun remote_haptic_project robot_ee_follow_wrist.py ```
+
+to launch rviz and control ee visually
+
 ```roslaunch ur10_e_moveit_config moveit_rviz.launch config:=true```
-
-
