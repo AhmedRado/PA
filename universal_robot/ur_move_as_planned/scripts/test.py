@@ -188,8 +188,8 @@ class MoveGroupPythonInterfaceTutorial(object):
         joint_goal[0] = 0  
         joint_goal[1] = -pi/2
         joint_goal[2] = pi/2
-        joint_goal[3] = -pi/2
-        joint_goal[4] = -pi/2
+        joint_goal[3] = 0
+        joint_goal[4] = 0
         joint_goal[5] = 0  # 1/6 of a turn
         # The go command can be called with joint values, poses, or without any
         # parameters if you have already set the pose or joint target for the group
@@ -498,7 +498,7 @@ def main():
         tutorial.go_to_start_state()
 
         # "============ Press `Enter` to execute a movement using a pose goal ..."
-        tutorial.go_to_pose_goal()
+        # tutorial.go_to_pose_goal()
 
         # # "============ Press `Enter` to plan and display a Cartesian path ..."
         # cartesian_plan, fraction = tutorial.plan_cartesian_path()
