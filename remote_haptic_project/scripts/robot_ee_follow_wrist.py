@@ -5,6 +5,7 @@ import rospy
 import moveit_commander
 import moveit_msgs.msg
 import geometry_msgs.msg
+from std_msgs.msg import Float64
 from gazebo_msgs.msg import LinkStates
 from math import pi
 
@@ -58,6 +59,12 @@ class move_robot_as_wrist():
         print(robot.get_current_state())
         print("")
         self.pub = rospy.Publisher("goal_position",geometry_msgs.msg.Pose,queue_size=1)
+        self.pub_palm_x = rospy.Publisher("palm_position_x",Float64,queue_size=1)
+        self.pub_palm_y = rospy.Publisher("palm_position_y",Float64,queue_size=1)
+        self.pub_palm_z = rospy.Publisher("palm_position_z",Float64,queue_size=1)
+        self.pub_wrist3_x = rospy.Publisher("wrist_position_x",Float64,queue_size=1)
+        self.pub_wrist3_y = rospy.Publisher("wrist_position_y",Float64,queue_size=1)
+        self.pub_wrist3_z = rospy.Publisher("wrist_position_z",Float64,queue_size=1)
         sub = rospy.Subscriber("/gazebo/link_states",LinkStates,self.Palm_link_state_callback)
         
 
@@ -77,6 +84,13 @@ class move_robot_as_wrist():
         self.x_orientation = 0
         self.y_orientation = 0
         self.z_orientation = 0
+        self.x_position_wrist_3 = 0
+        self.y_position_wrist_3 = 0
+        self.z_position_wrist_3 = 0
+        self.w_orientation_wrist_3 = 0
+        self.x_orientation_wrist_3 = 0
+        self.y_orientation_wrist_3 = 0
+        self.z_orientation_wrist_3 = 0
 
     def Palm_link_state_callback(self,data:LinkStates):
         self.x_position = data.pose[16].position.x
@@ -86,6 +100,20 @@ class move_robot_as_wrist():
         self.x_orientation = data.pose[16].orientation.x
         self.y_orientation = data.pose[16].orientation.y
         self.z_orientation = data.pose[16].orientation.z
+        self.pub_palm_x.publish(self.x_position + 0.2)
+        self.pub_palm_y.publish(self.y_position + 2.470692004698213)
+        self.pub_palm_z.publish(self.z_position)
+
+        self.x_position_wrist_3 = data.pose[9].position.x
+        self.y_position_wrist_3 = data.pose[9].position.y
+        self.z_position_wrist_3 = data.pose[9].position.z
+        self.w_orientation_wrist_3 = data.pose[9].orientation.w
+        self.x_orientation_wrist_3 = data.pose[9].orientation.x
+        self.y_orientation_wrist_3 = data.pose[9].orientation.y
+        self.z_orientation_wrist_3 = data.pose[9].orientation.z
+        self.pub_wrist3_x.publish(self.x_position_wrist_3)
+        self.pub_wrist3_y.publish(self.y_position_wrist_3)
+        self.pub_wrist3_z.publish(self.z_position_wrist_3)
         # self.go_to_hand_pose()
         print("x")
         print(data.pose[16].position.z)
@@ -171,7 +199,7 @@ class move_robot_as_wrist():
 
 def main():
     move = move_robot_as_wrist()
-    rate = rospy.Rate(50)
+    rate = rospy.Rate(20)
     move.go_to_start_state()
     while not rospy.is_shutdown():
         move.go_to_hand_pose()
