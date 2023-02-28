@@ -1,0 +1,6 @@
+<gazebo reference="thumb_link_1">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <kd>0.2</kd>
+    <gravity>0</gravity>
+</gazebo>

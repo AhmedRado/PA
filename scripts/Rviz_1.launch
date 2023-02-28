@@ -1,0 +1,4 @@
+<param>
+    name="robot_description"
+    textfile="$(find hand_model)/urdf/hand_model.urdf" 
+</param>

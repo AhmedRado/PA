@@ -5,10 +5,8 @@
   <arg name="initial_joint_positions" doc="Initial joint configuration of the robot"
        default=" -J index_joint_1 0 -J index_joint_2 0 -J index_joint_3 0 -J little_joint_1 0 -J little_joint_2 0 -J little_joint_3 0 -J middle_joint_1 0 -J middle_joint_2 0 -J middle_joint_3 0 -J ring_joint_1 0 -J ring_joint_2 0 -J ring_joint_3 0 -J thumb_joint_1 0 -J thumb_joint_2 0 -J thumb_joint_3 0"/>
 
-  <!-- startup simulated world -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find hand_model)/world/my_custom_world.world"/>
-    <!-- <arg name="world_name" default="worlds/empty.world"/> -->
+    <arg name="world_name" default="worlds/empty.world"/>
     <arg name="paused" value="true"/>
     <arg name="gui" value="$(arg gazebo_gui)"/>
   </include>

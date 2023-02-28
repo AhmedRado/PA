@@ -125,6 +125,10 @@ As MoveIt! seems to have difficulties with finding plans for the UR with full jo
 
 ```roslaunch ur10_e_moveit_config ur10_e_moveit_planning_execution.launch sim:=true limited:=true```
 
+to spawn the exoskelton and hand
+
+```roslaunch remote_haptic_project exoskelaton_plus_hand_bringup.launch ``
+
 to make robot ee follow palm
 
 ```export ROS_NAMESPACE=/ur10e``

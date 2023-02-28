@@ -1,0 +1,7 @@
+<joint name="link_5_to_palm" type="revolute">
+    <origin xyz="0 -0.3 0" rpy="1.5708 1.5708 0" />
+    <parent link="link_5" />
+    <child link="palm" />
+    <axis xyz="0 0 -1" />
+    <limit lower="-1" upper="2" effort="15" velocity="137" />
+</joint>
