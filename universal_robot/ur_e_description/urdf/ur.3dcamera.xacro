@@ -36,7 +36,7 @@
 
   <joint name="3d_camera_joint" type="fixed">
     <axis xyz="1 0 0" />
-    <origin xyz="0 0 0.15" rpy="0 0 3.14159"/>
+    <origin xyz="0 0 0.15" rpy="0 0 1.5708"/>
     <parent link="wrist_3_link"/>
     <child link="3d_camera_link"/>
   </joint>
