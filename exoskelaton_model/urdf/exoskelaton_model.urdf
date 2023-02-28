@@ -231,39 +231,39 @@
         </plugin>
     </gazebo>
     <gazebo reference="base_link">
-        <mu1>0.2</mu1>
+        <!-- <mu1>0.2</mu1>
         <mu2>0.2</mu2>
-        <kd>0.2</kd>
+        <kd>0.2</kd> -->
         <gravity>0</gravity>
     </gazebo>
     <gazebo reference="link_1">
-        <mu1>0.2</mu1>
+        <!-- <mu1>0.2</mu1>
         <mu2>0.2</mu2>
-        <kd>0.2</kd>
+        <kd>0.2</kd> -->
         <gravity>0</gravity>
     </gazebo>
     <gazebo reference="link_2">
-        <mu1>0.2</mu1>
+        <!-- <mu1>0.2</mu1>
         <mu2>0.2</mu2>
-        <kd>0.2</kd>
+        <kd>0.2</kd> -->
         <gravity>0</gravity>
     </gazebo>
     <gazebo reference="link_3">
-        <mu1>0.2</mu1>
+        <!-- <mu1>0.2</mu1>
         <mu2>0.2</mu2>
-        <kd>0.2</kd>
+        <kd>0.2</kd> -->
         <gravity>0</gravity>
     </gazebo>
     <gazebo reference="link_4">
-        <mu1>0.2</mu1>
+        <!-- <mu1>0.2</mu1>
         <mu2>0.2</mu2>
-        <kd>0.2</kd>
+        <kd>0.2</kd> -->
         <gravity>0</gravity>
     </gazebo>
     <gazebo reference="link_5">
-        <mu1>0.2</mu1>
+        <!-- <mu1>0.2</mu1>
         <mu2>0.2</mu2>
-        <kd>0.2</kd>
+        <kd>0.2</kd> -->
         <gravity>0</gravity>
     </gazebo>
 </robot>
