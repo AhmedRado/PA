@@ -199,7 +199,7 @@ class move_robot_as_wrist():
 
 def main():
     move = move_robot_as_wrist()
-    rate = rospy.Rate(20)
+    rate = rospy.Rate(5)
     move.go_to_start_state()
     while not rospy.is_shutdown():
         move.go_to_hand_pose()
